@@ -1,0 +1,93 @@
+inbal@latitude:~/Desktop/assignment1$ cat smelly_cat.txt 
+Smelly cat, smelly cat what are they feeding you?
+Smelly cat, smelly cat it's not your fault.
+
+They won't take you to the vet,
+You're obviously not their favorite pet.
+Smelly Cat, Smelly Cat,
+It's not your fault.
+
+You may not be a bed of roses,
+And you're no friend to those with noses.
+Smelly Cat, Smelly Cat,
+It's not your fault.
+
+I'll miss you before we're done
+Or the world will smell as one
+Smelly Cat, Smelly Cat,
+It's not your fault.
+
+Smelly cat, smelly cat what are they feeding you?
+Smelly cat, smelly cat it's not your fault!
+inbal@latitude:~/Desktop/assignment1$ cat sticky_shoes.txt 
+My favourite shoes so good to me
+I wear them everyday
+Down at the heel, holes in the toe
+Don't care what people say
+My feet's best friend, pals to the end
+With them I'm one hot chicky
+Though late one night
+Not much light
+I stepped in something icky
+(Chorus)
+Sticky shoes, sticky shoes
+Always makes me smile
+Sticky shoes, sticky shoes
+Next time I'll avoid the pile
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh 
+Number of parameters received : 0
+Usage : wordFinder.sh <valid file name> [More Files] ... <char> <length>
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh notExist aa 1
+Only one char needed : aa
+Usage : wordFinder.sh <valid file name> [More Files] ... <char> <length>
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh notExist aa bb
+Only one char needed : aa
+Not a positive number : bb
+Usage : wordFinder.sh <valid file name> [More Files] ... <char> <length>
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh notExist a b
+Not a positive number : b
+Usage : wordFinder.sh <valid file name> [More Files] ... <char> <length>
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh notExist a -1
+Not a positive number : -1
+Usage : wordFinder.sh <valid file name> [More Files] ... <char> <length>
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh notExist a 1
+File does not exist : notExist
+Usage : wordFinder.sh <valid file name> [More Files] ... <char> <length>
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh notExist a 
+Number of parameters received : 2
+Usage : wordFinder.sh <valid file name> [More Files] ... <char> <length>
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt s 2 
+1 smell
+14 smelly
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt s 6 
+14 smelly
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt n 3 
+1 noses
+7 not
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt n 1
+1 no
+1 noses
+7 not
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt sticky_shoes.txt s 1
+1 say
+1 smell
+1 smile
+1 so
+1 something
+1 stepped
+4 sticky
+5 shoes
+6 s
+14 smelly
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt sticky_shoes.txt s 3
+1 say
+1 smell
+1 smile
+1 something
+1 stepped
+4 sticky
+5 shoes
+14 smelly
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt sticky_shoes.txt s 8
+1 something
+inbal@latitude:~/Desktop/assignment1$ ./wordFinder.sh smelly_cat.txt sticky_shoes.txt s 30
